@@ -112,7 +112,6 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0"
   },
-  "proxy": "http://localhost:800",
   "jest": {
     "roots": [
       "<rootDir>/src"

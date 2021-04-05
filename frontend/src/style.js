@@ -11,6 +11,9 @@ export const theme = {
 };
 
 const GlobalStyle = createGlobalStyle`
+*,*::before, *::after{
+  box-sizing:border-box;
+}
   body {
     font-family:'Roboto','Arial',sans-serif;
     background-color:${theme.mainLayoutColor};
@@ -18,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
     margin:0;
     padding:0;
     align-items:center;
-    min-width:800px;
     user-select: none;
     letter-spacing:0.5px;
     color:rgba(0,0,0,0.6);
@@ -27,16 +29,22 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
+display: block;
+box-sizing:border-box;
+width:70vw;
+overflow:auto;
+min-width:500px;
+@media(max-width:80em){
+  width:100vw;
+}
 display:block;
 background-color:${(props) => (props.noBackColor ? theme.mainLayoutColor : 'whitesmoke')};
-width:1050px;
-position:relative;
-top:40px;
-bottom:0;
+position:absolute;
+top:5rem;
+bottom:1em;
 left:0;
 right:0;
-margin:auto;
-height: auto;
+margin:0 auto;
 transition:height 0.5s ease-in;
 ${({ hidden }) => hidden && `
 height:300px;
