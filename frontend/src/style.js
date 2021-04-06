@@ -24,6 +24,8 @@ const GlobalStyle = createGlobalStyle`
     user-select: none;
     letter-spacing:0.5px;
     color:rgba(0,0,0,0.6);
+    overflow-x:hidden;
+    width:100%;
 
   }
 `;
@@ -32,7 +34,7 @@ export const Container = styled.div`
 display: block;
 box-sizing:border-box;
 width:70vw;
-overflow:auto;
+overflow-y:auto;
 min-width:500px;
 @media(max-width:80em){
   width:100vw;
