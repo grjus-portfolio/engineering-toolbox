@@ -1,16 +1,21 @@
-export const TopBarItems = [
+export const NavLinkItems = [
   {
-    name: 'Contact',
+    display: 'Home',
+    link: '/',
+    key: 'nav-home',
+  },
+  {
+    display: 'Contact',
     link: '/contact',
     key: 'nav-contact',
   },
   {
-    name: 'About',
+    display: 'About',
     link: '/about',
     key: 'nav-about',
   },
   {
-    name: 'Thoery manual',
+    display: 'Thoery manual',
     link: '/theory-manual',
     key: 'nav-manual',
   },
