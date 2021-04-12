@@ -1,47 +1,40 @@
-import React, { useContext, useRef } from 'react';
-import Menu from '@material-ui/icons/Menu';
-import { ThemeProvider } from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import LogoAssm from './Logo';
+import { NavLinkItems } from './config';
 import {
-  Bar, Anchor,
-  theme,
+  Header, Nav, NavUl, NavLi, Logo, CustomMenu,
 } from './style';
 
-import { TopBarItems } from './config';
-import { AppContextDispatch } from '../App/context';
+// import { AppContextDispatch } from '../App/context';
 
 const TopBar = () => {
-  const appStateDispatch = useContext(AppContextDispatch);
-  const menuRef = useRef(null);
+  const [expand, setExpand] = useState(false);
 
-  const showMenu = (e) => {
-    if (menuRef.current.contains(e.target)) {
-      appStateDispatch((prev) => ({
-        ...prev, showSidebar: '280px',
-      }));
-    }
-  };
+  const location = useLocation();
+
+  useEffect(() => {
+    setExpand(false);
+  }, [location]);
+
   return (
-    <ThemeProvider theme={theme}>
-      <Bar>
-        <Menu onClick={showMenu} innerRef={menuRef} style={{ cursor: 'pointer' }} />
-        <LogoAssm rotate />
-        {TopBarItems.map((item) => (
-          <Anchor
-            key={item.key}
-            activeClassName={Anchor.active}
-            replace
-            exact
-            to={item.link}
-          >
-            {item.name}
+    <Header>
 
-          </Anchor>
-        ))}
+      <Logo>
+        <CustomMenu onClick={() => setExpand((prev) => !prev)} />
+        <LogoAssm />
+      </Logo>
+      <Nav expand={expand}>
+        <NavUl expand={expand}>
+          {NavLinkItems.map((item) => (
+            <NavLi key={item.key}>
+              <NavLink exact to={item.link}>{item.display}</NavLink>
+            </NavLi>
+          ))}
 
-      </Bar>
-    </ThemeProvider>
+        </NavUl>
+      </Nav>
+    </Header>
   );
 };
-
 export default TopBar;
