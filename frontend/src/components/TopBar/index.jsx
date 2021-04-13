@@ -3,12 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import LogoAssm from './Logo';
 import { NavLinkItems } from './config';
 import {
-<<<<<<< HEAD
-  Bar, Anchor,
-  theme, NavLinkUl, LogoBox,
-=======
   Header, Nav, NavUl, NavLi, Logo, CustomMenu,
->>>>>>> responsive/TitleCard
 } from './style';
 
 // import { AppContextDispatch } from '../App/context';
@@ -23,32 +18,6 @@ const TopBar = () => {
   }, [location]);
 
   return (
-<<<<<<< HEAD
-    <ThemeProvider theme={theme}>
-      <nav>
-        <Bar>
-          <Menu onClick={showMenu} innerRef={menuRef} style={{ cursor: 'pointer', heigth: '100%', margin: 'auto 0' }} />
-          <LogoBox>
-            <LogoAssm rotate />
-          </LogoBox>
-          <NavLinkUl>
-            {TopBarItems.map((item) => (
-              <Anchor
-                key={item.key}
-                activeClassName={Anchor.active}
-                replace
-                exact
-                to={item.link}
-              >
-                {item.name}
-
-              </Anchor>
-            ))}
-          </NavLinkUl>
-        </Bar>
-      </nav>
-    </ThemeProvider>
-=======
     <Header>
 
       <Logo>
@@ -66,7 +35,6 @@ const TopBar = () => {
         </NavUl>
       </Nav>
     </Header>
->>>>>>> responsive/TitleCard
   );
 };
 export default TopBar;
