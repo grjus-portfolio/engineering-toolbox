@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 export const theme = {
   mainLayoutColor: '#E3E2DF',
@@ -50,9 +50,15 @@ export const Container = styled.div`
   width: 70%;
   transition: height 0.5s ease-in;
   ${({ hidden }) => hidden
-    && `
-height:300px;
-`}
+    && 'height:300px'}
+`;
+
+export const Shadow = css`
+box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+transition: box-shadow 200ms ease-in-out;
+&:hover{
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+}
 `;
 
 export default GlobalStyle;
