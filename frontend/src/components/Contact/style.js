@@ -1,12 +1,5 @@
 import styled from 'styled-components';
-import { theme} from '../../style';
-
-export const FormContainer = styled(Container)`
-width:50%;
-@media(max-width:80em){
-    width:80%;
-}
-`;
+import { theme } from '../../style';
 
 export const Container = styled.div`
 padding:2.0em;
@@ -43,6 +36,11 @@ width:50%;
 }
 `;
 
+export const FormContainer = styled.div`
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+`;
 
 export const ConfirmMessage = styled.p`
 font-size:16px;
