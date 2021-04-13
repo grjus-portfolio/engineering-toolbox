@@ -1,16 +1,16 @@
 import React from 'react';
-import LogoComponent from '../LogoIcon';
-import { Logo, LogoFooter, LogoTitle } from './style';
+import LOGO from './img/LOGO.PNG';
+
+import {
+  Logo,
+  LogoContainer,
+} from './style';
 
 function AboutLogo() {
   return (
-    <>
-      <Logo>
-        <LogoTitle>EngineeringToolbox</LogoTitle>
-        <LogoComponent rotValue icoSize="large" margintop="26px" />
-      </Logo>
-      <LogoFooter>Applications for Engineers</LogoFooter>
-    </>
+    <LogoContainer>
+      <Logo src={LOGO} alt="Logo" />
+    </LogoContainer>
   );
 }
 

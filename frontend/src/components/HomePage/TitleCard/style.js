@@ -31,7 +31,7 @@ margin-right:1em;
 `;
 export const Title = styled.h2`
 margin-top:0;
-color:${theme.logoColor}
+color:${theme.primary}
 
 `;
 export const Description = styled.p`
@@ -39,6 +39,7 @@ color:rgba(0,0,0,0.8);
 font-size:1.2rem;
 line-height:1.5em;
 margin:0 auto;
+text-align:justify;
 
 
 

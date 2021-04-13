@@ -11,11 +11,11 @@ const StyledButton = withStyles({
     letterSpacing: '2px',
   },
   containedPrimary: {
-    backgroundColor: theme.logoColor,
+    backgroundColor: theme.primary,
     color: 'whitesmoke',
     '&:hover': {
       backgroundColor: 'rgba(0,0,0,0.15)',
-      borderColor: theme.logoColor,
+      borderColor: theme.primary,
       color: 'rgba(0,0,0,0.8)',
     },
   },
@@ -23,19 +23,19 @@ const StyledButton = withStyles({
     backgroundColor: 'rgba(0,0,0,0.1)',
     '&:hover': {
       backgroundColor: 'rgba(0,0,0,0.15)',
-      borderColor: theme.logoColor,
+      borderColor: theme.primary,
     },
   },
   outlinedPrimary: {
     borderColor: 'rgba(0,0,0,0.3)',
-    color: theme.logoColor,
+    color: theme.primary,
     fontSize: '14px',
     maxWidth: '200px',
     height: '30px',
     fontWeight: 'normal',
     '&:hover': {
       backgroundColor: theme.mainLayoutColor,
-      borderColor: theme.logoColor,
+      borderColor: theme.primary,
     },
   },
 

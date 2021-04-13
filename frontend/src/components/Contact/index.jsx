@@ -1,16 +1,17 @@
 import React, { useState, useReducer } from 'react';
 import { useForm } from 'react-hook-form';
-import Card from '../ToolboxComponents/Card';
-import { FormContent, ButtonContainer, ErrorMessage } from '../ToolboxComponents/Card/style';
+import { ButtonContainer, ErrorMessage } from '../ToolboxComponents/Card/style';
 import CustomButton from '../ToolboxComponents/Button/Button';
 import { TextBox } from '../ToolboxComponents/TextBox';
+
 import { initialState, actionType, dataSubmitReducer } from '../Reducers/index';
 import fastApi from '../Api/index';
 import {
-  ConfirmMessage, Description, Error, FormContainer, Header,
+  ConfirmMessage, Description, FormContainer, FieldContainer, Header, Container,
 } from './style';
 import CustomSpinner from '../ToolboxComponents/Spinner';
-import { FadeContainer } from '../ToolboxComponents/FadeContainer/FadeContainer';
+// import { FadeContainer } from '../ToolboxComponents/FadeContainer/FadeContainer';
+import GeneralCard from '../ToolboxComponents/GeneralCardTemplate';
 
 function Contact() {
   const [state, dispatch] = useReducer(dataSubmitReducer, initialState);
@@ -50,27 +51,19 @@ function Contact() {
   };
 
   return (
-    <FadeContainer timeout={500} condition>
-      <FormContainer>
-        <Card>
-          <FormContent>
+    <GeneralCard>
 
-            <Header>Contact us</Header>
-            <Description>
-              {' '}
-              Found a bug? Need support? Or maybe you have an idea for online
-              {' '}
-              <span style={{ fontWeight: 'bold' }}>Enginnering Tool</span>
-              {' '}
-              ?
-              Please use this contact form to reach us.
-              {/* <Error>Yes, I am aware that this form should have reCAPTCHA. I a working on it</Error> */}
-              <Error />
-            </Description>
+      <Container>
 
-          </FormContent>
+        <Header>Contact us</Header>
+        <Description>
+          Found a bug? Need support? Or maybe you have an idea for online
+          {' '}
+          <span>Enginnering Tool</span>
+        </Description>
 
-          <FormContent>
+        <FormContainer>
+          <FieldContainer>
             <TextBox
               name="email"
               inputRef={register({
@@ -86,11 +79,11 @@ function Contact() {
               label="Your email adress"
               error={errors.email}
               fieldType="text"
-              width="60%"
+              width="100%"
               disabled={state.isRunning}
             />
-          </FormContent>
-          <FormContent>
+          </FieldContainer>
+          <FieldContainer>
             <TextBox
               name="subject"
               inputRef={register({
@@ -106,11 +99,12 @@ function Contact() {
               label="Subject"
               error={errors.subject}
               fieldType="text"
-              width="60%"
+              width="100%"
               disabled={state.isRunning}
             />
-          </FormContent>
-          <FormContent>
+          </FieldContainer>
+          <FieldContainer>
+
             <TextBox
               name="message"
               inputRef={register({
@@ -130,24 +124,25 @@ function Contact() {
               width="100%"
               disabled={state.isRunning}
             />
+          </FieldContainer>
+        </FormContainer>
 
-            <div>
-              <ConfirmMessage>
-                {confirm}
-              </ConfirmMessage>
-            </div>
+        <ConfirmMessage>
+          {confirm}
+        </ConfirmMessage>
 
-            {state.errorMessage ? state.errorMessage.map((item) => <ErrorMessage key={`error-${item}`}>{`${item}`}</ErrorMessage>) : null}
-          </FormContent>
-          <ButtonContainer style={{ padding: '20px 0px 20px 10px' }}>
-            <CustomButton handleClick={handleSubmit(sendMessage)} label={state.isRunning ? 'SUBMITTING' : 'SUBMIT'} buttonType="contained" color="primary" disabled={state.isRunning} />
-            {state.isRunning ? <CustomSpinner marginTop="6px" /> : null}
+        <FieldContainer>
+          {state.errorMessage ? state.errorMessage.map((item) => <ErrorMessage key={`error-${item}`}>{`${item}`}</ErrorMessage>) : null}
+        </FieldContainer>
+        <ButtonContainer style={{ padding: '20px 0px 20px 10px' }}>
+          <CustomButton handleClick={handleSubmit(sendMessage)} label={state.isRunning ? 'SUBMITTING' : 'SUBMIT'} buttonType="contained" color="primary" disabled={state.isRunning} />
+          {state.isRunning ? <CustomSpinner marginTop="6px" /> : null}
 
-          </ButtonContainer>
+        </ButtonContainer>
 
-        </Card>
-      </FormContainer>
-    </FadeContainer>
+      </Container>
+
+    </GeneralCard>
   );
 }
 

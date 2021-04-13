@@ -1,29 +1,48 @@
 import styled from 'styled-components';
-import { theme } from '../../../style';
+import { theme, Shadow } from '../../../style';
 
-export const Logo = styled.div`
+export const Container = styled.div`
 position:relative;
-font-family: 'Abel', sans-serif;
-display:flex;
-justify-content:center;
-color:${theme.logoColor};
-width:100%;
+margin:0 auto;
+width:50%;
+background:${theme.topBarColor};
+top:8em;
+${Shadow}
+@media screen and (max-width:${theme.deviceMin}){
+    width:90%;
+}
+
+`;
+
+export const LogoContainer = styled.div`
+position:relative;
+align-self:center;
+top:1em;
+margin:0 auto;
+width:30%;
+@media screen and (max-width:${theme.deviceMin}){
+    width:50%;
+}
+`;
+
+export const Logo = styled.img`
+max-width:100%;
+
+
 `;
 
 export const LogoTitle = styled.h1`
-font-size:34px;
-padding-right:10px;
+margin:0 auto;
+font-size:2rem;
+
 `;
 
 export const LogoFooter = styled.div`
-font-size:16px;
+position:relative;
+font-size:1rem;
 letter-spacing:1px;
 text-align:center;
 position:relative;
-margin-top:-20px;
-`;
-
-export const Section = styled.div`
-padding:10px;
-
+/* margin:0 auto; */
+left:1em;
 `;

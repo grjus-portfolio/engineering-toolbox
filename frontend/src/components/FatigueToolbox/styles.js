@@ -17,11 +17,11 @@ export const StepperTheme = createMuiTheme({
     MuiStepIcon: {
       root: {
         '&$completed': {
-          color: globalTheme.logoColor,
+          color: globalTheme.primary,
           fontSize: theme.iconSize,
         },
         '&$active': {
-          color: globalTheme.logoColorHover,
+          color: globalTheme.primaryHover,
           fontSize: theme.iconSizeActive,
         },
       },

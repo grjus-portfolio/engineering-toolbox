@@ -22,7 +22,7 @@ export const FatigueChart = ({ unit, chartRef }) => {
           backgroundColor: '#12a112',
           pointRadius: 0,
           borderWidth: 3.5,
-          borderColor: theme.logoColor,
+          borderColor: theme.primary,
           fill: false,
           data: raw.stress.map((item, idx) => ({
             x: raw.cycles[idx],

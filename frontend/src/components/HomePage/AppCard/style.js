@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { theme } from '../../../style';
+import { theme, Shadow } from '../../../style';
 
 export const Container = styled(NavLink)`
 display:flex;
@@ -11,11 +11,7 @@ background:${theme.topBarColor};
 padding:1.5em;
 width:30%;
 text-decoration:none;
-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-transition: box-shadow 200ms ease-in-out;
-&:hover{
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
-}
+${Shadow}
 @media screen and (max-width:${theme.deviceMin}){
     width:100%;
     margin-bottom:1em;

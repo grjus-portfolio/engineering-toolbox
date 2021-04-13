@@ -2,18 +2,22 @@ import styled from 'styled-components';
 import { theme } from '../../style';
 
 export const Container = styled.div`
+font-size:1.3rem;
 display:block;
-
-padding:20px;
+margin-top:1em;
+padding:1.5em;
 `;
 
 export const Title = styled.h2`
-color:${theme.logoColor}
+color:${theme.primary};
+font-size:1.2em;
+margin:0;
 `;
 
 export const Description = styled.p`
 color:rgba(0,0,0,0.8);
-font-size:18px;
+
 word-spacing:5px;
-line-height:28px;
+text-align:justify;
+line-height:1.6em;
 `;

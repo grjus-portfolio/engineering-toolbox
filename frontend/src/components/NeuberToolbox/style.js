@@ -50,5 +50,5 @@ export const Header = styled(Title)`
 margin-left:${(props) => (props.noOffset ? '0px' : '20px')};
 margin-top:0px;
 font-weight:bold;
-color:${theme.logoColor}
+color:${theme.primary}
 `;
