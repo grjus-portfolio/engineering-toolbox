@@ -39,6 +39,7 @@ color:rgba(0,0,0,0.8);
 font-size:1.2rem;
 line-height:1.5em;
 margin:0 auto;
+text-align:justify;
 
 
 
