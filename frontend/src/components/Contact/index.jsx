@@ -10,7 +10,8 @@ import {
   ConfirmMessage, Description, FormContainer, FieldContainer, Header, Container,
 } from './style';
 import CustomSpinner from '../ToolboxComponents/Spinner';
-import { FadeContainer } from '../ToolboxComponents/FadeContainer/FadeContainer';
+// import { FadeContainer } from '../ToolboxComponents/FadeContainer/FadeContainer';
+import GeneralCard from '../ToolboxComponents/GeneralCardTemplate';
 
 function Contact() {
   const [state, dispatch] = useReducer(dataSubmitReducer, initialState);
@@ -50,7 +51,8 @@ function Contact() {
   };
 
   return (
-    <FadeContainer timeout={500} condition>
+    <GeneralCard>
+
       <Container>
 
         <Header>Contact us</Header>
@@ -139,7 +141,8 @@ function Contact() {
         </ButtonContainer>
 
       </Container>
-    </FadeContainer>
+
+    </GeneralCard>
   );
 }
 

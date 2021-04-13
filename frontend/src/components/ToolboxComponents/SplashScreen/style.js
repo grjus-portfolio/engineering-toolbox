@@ -24,7 +24,7 @@ justify-content:center;
 
 export const Title = styled.p`
 font-size:36px;
-color:${theme.logoColor};
+color:${theme.primary};
 letter-spacing:1px;
 font-family: 'Abel', sans-serif;
 text-align:center;
@@ -61,10 +61,10 @@ export const StyledProgress = withStyles({
   },
 
   bar1Indeterminate: {
-    backgroundColor: theme.logoColor,
+    backgroundColor: theme.primary,
 
   },
   bar2Indeterminate: {
-    backgroundColor: theme.logoColorHover,
+    backgroundColor: theme.primaryHover,
   },
 })(LinearProgress);

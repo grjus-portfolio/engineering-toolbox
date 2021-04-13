@@ -35,7 +35,7 @@ const iconTheme = (icoTheme) => ({
     }),
   },
   colorPrimary: {
-    color: theme.logoColor,
+    color: theme.primary,
 
   },
 });
@@ -43,7 +43,7 @@ export const DetailIcon = withStyles(iconTheme)(DetailsIcon);
 
 export const Title = styled.h3`
 text-align:center;
-color:${theme.logoColor}
+color:${theme.primary}
 `;
 
 export const TableHeader = styled.th`

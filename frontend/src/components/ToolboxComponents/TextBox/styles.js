@@ -5,19 +5,19 @@ const StyledTextField = withStyles({
   root: {
     width: (props) => (props.width ? props.width : '180px'),
     '& label.Mui-focused': {
-      color: `${theme.logoColor}`,
+      color: `${theme.primary}`,
     },
     maxHeight: '500px',
 
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        borderColor: `${theme.logoColor}`,
+        borderColor: `${theme.primary}`,
       },
       '&:hover fieldset': {
-        borderColor: `${theme.logoColor}`,
+        borderColor: `${theme.primary}`,
       },
       '&.Mui-focused fieldset': {
-        borderColor: theme.logoColor,
+        borderColor: theme.primary,
       },
 
     },

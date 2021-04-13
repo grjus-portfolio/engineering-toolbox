@@ -5,6 +5,6 @@ import { theme } from '../../../style';
 export const StyledSpinner = withStyles({
   root: { marginTop: (props) => (props.margintop ? props.margintop : '25px') },
   colorPrimary: {
-    color: theme.logoColor,
+    color: theme.primary,
   },
 })(CircularProgress);

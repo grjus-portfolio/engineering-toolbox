@@ -5,10 +5,10 @@ import { theme } from '../../../style';
 const StyledCheckbox = withStyles({
   root: {
     '&$checked': {
-      color: `${theme.logoColor}`,
+      color: `${theme.primary}`,
     },
     primaryColor: {
-      color: `${theme.logoColorHover}`,
+      color: `${theme.primaryHover}`,
     },
 
   },

@@ -29,11 +29,11 @@ class FatigueReport {
       ultimateStrength, fatigueTheory, yieldStrength,
     } = this.state;
     this.doc.setFontSize('16');
-    this.doc.setTextColor(theme.logoColor);
+    this.doc.setTextColor(theme.primary);
     this.yPos += 90;
     this.doc.text(this.xPos, this.yPos, 'Summary');
     this.doc.autoTable({
-      columnStyles: { 0: { textColor: theme.logoColor, cellWidth: 80 } },
+      columnStyles: { 0: { textColor: theme.primary, cellWidth: 80 } },
       body: [
         ['Project name', this.projectName],
         ['Unit', unitSystem],
@@ -70,7 +70,7 @@ class FatigueReport {
       const pageWidth = this.doc.internal.pageSize.getWidth();
       this.doc.addImage(logo, 'PNG', 8, 0, 146, 43);
       this.doc.setFontSize(14);
-      this.doc.setTextColor(theme.logoColor);
+      this.doc.setTextColor(theme.primary);
       this.doc.text(10, 50, 'Fatigue analysis report');
       this.doc.setTextColor('black');
       this.doc.setFontSize(12);
@@ -87,7 +87,7 @@ class FatigueReport {
 
   addfatigueTable(unit) {
     this.doc.setFontSize('16');
-    this.doc.setTextColor(theme.logoColor);
+    this.doc.setTextColor(theme.primary);
     this.yPos += 90;
     this.doc.text(this.xPos, this.yPos, 'Analysis results');
     this.doc.autoTable({

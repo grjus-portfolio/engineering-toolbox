@@ -1,23 +1,15 @@
 import styled from 'styled-components';
-import { theme, Shadow } from '../../style';
+import { theme } from '../../style';
 
 export const Container = styled.div`
-position:relative;
-top:8em;
-width:50%;
-margin:0 auto;
-background:${theme.topBarColor};
-padding:1.5em;
-${Shadow};
-@media screen and (max-width:${theme.deviceMin}){
-    width:90%;
-}
+padding:2.0em;
+
 `;
 
 export const Header = styled.h2`
 font-size:1.5rem;
-margin:0.5em 0;
-color:${theme.logoColor};
+margin:0;
+color:${theme.primary};
 letter-spacing:0.8px;
 word-spacing:2px;
 `;
@@ -53,13 +45,13 @@ justify-content:space-between;
 export const ConfirmMessage = styled.p`
 font-size:16px;
 letter-spacing:0.5px;
-color:${(props) => (props.color ? props.color : theme.logoColor)}
+color:${(props) => (props.color ? props.color : theme.primary)}
 `;
 
 export const Error = styled.p`
 font-size:1rem;
 letter-spacing:0.5px;
-color:${theme.logoColorHover};
+color:${theme.primaryHover};
 padding:0px;
 margin:0px;
 font-weight:bold;

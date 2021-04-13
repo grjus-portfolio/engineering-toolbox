@@ -13,7 +13,7 @@ padding:0 20px 20px 20px;
 /* background-color:whitesmoke; */
 `;
 export const Title = styled.h3`
-color:${theme.logoColor}
+color:${theme.primary}
 `;
 
 export const Message = styled.p`

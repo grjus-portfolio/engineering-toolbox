@@ -31,7 +31,7 @@ margin-right:1em;
 `;
 export const Title = styled.h2`
 margin-top:0;
-color:${theme.logoColor}
+color:${theme.primary}
 
 `;
 export const Description = styled.p`

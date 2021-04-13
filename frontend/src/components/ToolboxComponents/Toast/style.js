@@ -16,7 +16,7 @@ export const Title = styled.p`
 font-size:${(props) => (props.small ? '14px' : '16px')};
 letter-spacing:0.5px;
 font-weight:${(props) => (props.small ? 'normal' : 'bold')};
-color:${(props) => (props.small ? theme.logoColor : theme.logoColorHover)};
+color:${(props) => (props.small ? theme.primary : theme.primaryHover)};
 margin-left:${(props) => (props.small ? '10px' : '5px')}
 `;
 

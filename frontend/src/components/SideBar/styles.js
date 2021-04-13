@@ -83,7 +83,7 @@ export const ItemNavLink = styled(NavLink)`
 ${mainLinkStyle}
 text-decoration:none;
 &.active{
-    color:${theme.logoColor};
+    color:${theme.primary};
     font-weight:bold;
 
 }
@@ -98,11 +98,11 @@ margin:0;
 padding:0px 0 10px 20px;
 transition: all 0.3s ease-in-out;
 &:hover{
-    color:${theme.logoColorHover};
+    color:${theme.primaryHover};
     /* font-weight:bold; */
 };
 &.active{
-    color:${theme.logoColor};
+    color:${theme.primary};
     font-weight:bold;
 }
 `;

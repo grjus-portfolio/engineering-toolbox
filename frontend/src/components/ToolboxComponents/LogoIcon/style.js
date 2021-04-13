@@ -13,7 +13,7 @@ const logoIcoTheme = (icoTheme) => ({
     marginTop: (props) => props.margintop,
   },
   colorPrimary: {
-    color: theme.logoColor,
+    color: theme.primary,
   },
 
 });
