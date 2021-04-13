@@ -9,11 +9,11 @@ export const theme = {
   logoColorHover: '#AC3B61',
   primary: '#123C69',
   secondary: '#AC3B61',
-  deviceMin: '450px',
+  deviceMin: '1000px',
 };
 
 const GlobalStyle = createGlobalStyle`
-*{
+*,*::before,*::after {
   box-sizing:border-box;
 }
 :root{
@@ -42,7 +42,7 @@ export const Container = styled.div`
   display: block;
   background-color: ${(props) => (props.noBackColor ? theme.mainLayoutColor : 'whitesmoke')};
   position: relative;
-  top: 40px;
+  top: 60px;
   bottom: 0;
   left: 0;
   right: 0;
