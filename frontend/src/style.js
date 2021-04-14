@@ -8,19 +8,20 @@ export const theme = {
   // topBarColor: 'white',
   primary: '#123C69',
   secondary: '#AC3B61',
-  deviceMin: '1000px',
+  deviceMinLarge: '1000px',
+  deviceMinSmall: '600px',
 };
 
 const GlobalStyle = createGlobalStyle`
 *,*::before,*::after {
   box-sizing:border-box;
-  @media screen and (max-width:${theme.deviceMin}){
+  @media screen and (max-width:${theme.deviceMinLarge}){
     /* overflow-x:hidden; */
 }
 }
 :root{
   font-size:16px;
-  @media (max-width:${theme.deviceMin}){
+  @media (max-width:${theme.deviceMinLarge}){
       font-size:14px;
     }
 
@@ -53,13 +54,13 @@ export const Container = styled.div`
   right: 0;
   margin: auto;
   width: 70%;
-  /* max-height: fit-content;
-  height: -moz-max-content; */
   transition: height 0.5s ease-in;
   ${({ hidden }) => hidden
     && 'height:300px'}
+  ${({ app }) => app
+    && 'width: 60%;'}
 
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
     width:90%;
     /* margin-bottom:1em; */
     /* align-items:center; */

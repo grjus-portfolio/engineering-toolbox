@@ -14,7 +14,7 @@ padding:1.5em;
 box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px ;
 
 
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
     flex-direction:column;
     width:100%;
     align-items:center;
@@ -24,7 +24,7 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px ;
 `;
 export const Info = styled.div`
 margin-right:1em;
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
     margin-top:1.5em;
 }
 
@@ -49,7 +49,7 @@ text-align:justify;
     
 }
 
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
     display:flex;
     flex-wrap:wrap;
     justify-content:space-around;
@@ -60,7 +60,7 @@ export const Image = styled.img`
 display:block;
 max-width:100%;
 align-self:center;
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
     width:100%;
     order:-1;
 }

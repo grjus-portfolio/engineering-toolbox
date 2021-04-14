@@ -5,7 +5,7 @@ import { theme } from '../../style';
 
 export const CustomMenu = withStyles({
   root: {
-    [`@media (min-width:${theme.deviceMin})`]: { // eslint-disable-line no-useless-computed-key
+    [`@media (min-width:${theme.deviceMinLarge})`]: { // eslint-disable-line no-useless-computed-key
       display: 'none',
     },
     marginRight: '0.5em',
@@ -24,7 +24,7 @@ z-index:999;
 width:100%;
 padding:0.5rem;
 
-@media screen and (min-width:${theme.deviceMin}){
+@media screen and (min-width:${theme.deviceMinLarge}){
   display: grid;
     grid-template-columns: 1fr auto 800px 1fr;
 }
@@ -37,7 +37,7 @@ export const Logo = styled.div`
 white-space:nowrap;
 display:flex;
 margin:0.5em auto;
-@media screen and (min-width:${theme.deviceMin}){
+@media screen and (min-width:${theme.deviceMinLarge}){
   grid-column: 1 / 3;
   
 }
@@ -69,7 +69,7 @@ export const Nav = styled.nav`
 
 }
 
-@media screen and (min-width:${theme.deviceMin}){
+@media screen and (min-width:${theme.deviceMinLarge}){
     all: unset;
     grid-column: 3 / 4;
     display: flex;
@@ -99,7 +99,7 @@ export const NavUl = styled.ul`
   }
 }
 
-  @media screen and (min-width:${theme.deviceMin}){
+  @media screen and (min-width:${theme.deviceMinLarge}){
     opacity: 1;
     display: flex;
     justify-content: flex-end;
@@ -149,7 +149,7 @@ margin-bottom: 1em;
   transform: scale(1, 1);
 }
 
-@media screen and (min-width:${theme.deviceMin}){
+@media screen and (min-width:${theme.deviceMinLarge}){
   margin-left: 3em;
   margin-bottom: 0;
   

@@ -10,7 +10,7 @@ padding: 10px;
 margin: 0 auto;
 width: 30%;
 text-align:center;
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
     position:absolute;
     width:90%;
     margin:0;
@@ -22,7 +22,7 @@ export const Logo = styled.img`
 top:0;
 max-width:60%;
 align-self:center;
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
   max-width:70%;
 }
 `;

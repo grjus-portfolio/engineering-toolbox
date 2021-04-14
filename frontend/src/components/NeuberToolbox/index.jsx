@@ -1,11 +1,10 @@
 import React from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 
-import { Divider, Fade } from '@material-ui/core';
-import Card from '../ToolboxComponents/Card';
+import { Divider } from '@material-ui/core';
 import { Container } from '../../style';
 import {
-  FormContent, InputBlock, OpacityBlock, Header,
+  InputBlock, OpacityBlock, Header, AppContainer, InputField,
 } from './style';
 import DropDown from '../ToolboxComponents/Dropdown';
 import { FadeTextBox } from '../ToolboxComponents/TextBox';
@@ -16,7 +15,6 @@ import { validationRules } from './validators';
 import { useDataFetch } from './dataFetch';
 import Results from './Results';
 import Spinner from './Spinner/Spinner';
-import IntroMessage from './IntroMessage';
 import { FadeContainer } from '../ToolboxComponents/FadeContainer/FadeContainer';
 
 const NeuberToolbox = () => {
@@ -57,32 +55,24 @@ const NeuberToolbox = () => {
   });
 
   return (
-    <Container>
-      <Spinner isRunning={state.isRunning} />
-      <OpacityBlock disabled={state.isRunning}>
+    <Container noBackColor>
+      <AppContainer>
+        <Spinner isRunning={state.isRunning} />
+        <OpacityBlock disabled={state.isRunning}>
 
-        <Card style={{ padding: '30px' }}>
+          <Header>Select unit system</Header>
+          <InputField>
+            <DropDown
+              name="unitSystem"
+              control={control}
+              dropDownItems={unitSystemItems}
+              handleChange={() => trigger(['youngsModulus', 'linearStress', 'yieldStrength'])}
+            />
+          </InputField>
+          <Header>Input data</Header>
+          <InputBlock>
 
-          <InputBlock style={{ width: '110%' }}>
-            <IntroMessage visible={results.isInit} />
-            <Fade in={!results.isInit}>
-              <span>
-                <Header noOffset>Select unit system</Header>
-                <FormContent>
-                  <DropDown
-                    name="unitSystem"
-                    control={control}
-                    dropDownItems={unitSystemItems}
-                    handleChange={() => trigger(['youngsModulus', 'linearStress', 'yieldStrength'])}
-                  />
-
-                </FormContent>
-              </span>
-            </Fade>
-            <FormContent>
-              <Header noOffset>Input data</Header>
-            </FormContent>
-            <FormContent flex style={{ justifyContent: 'space-between' }}>
+            <InputField>
               <FadeTextBox
                 name="linearStress"
                 inputRef={register(
@@ -91,13 +81,13 @@ const NeuberToolbox = () => {
                 label={`Linear stress,${unitSystem}`}
                 error={errors.linearStress}
                 disabled={state.isRunning}
-                width="150px"
-                labelWidth="150px"
-
+                width="100%"
+                labelWidth="100%"
               />
+            </InputField>
+            <InputField>
               <FadeTextBox
-                visible={!results.isInit}
-                labelWidth="200px"
+                labelWidth="100%"
                 name="youngsModulus"
                 inputRef={register(
                   validationRules(
@@ -108,9 +98,14 @@ const NeuberToolbox = () => {
                 label={`Young's modulus,${unitSystem}`}
                 error={errors.youngsModulus}
                 disabled={state.isRunning}
+                width="100%"
+
               />
+            </InputField>
+
+            <InputField>
+
               <FadeTextBox
-                visible={!results.isInit}
                 name="yieldStrength"
                 inputRef={register(
                   validationRules(
@@ -121,40 +116,43 @@ const NeuberToolbox = () => {
                 disabled={state.isRunning}
                 label={`Yield strength,${unitSystem}`}
                 error={errors.yieldStrength}
-                width="150px"
-                labelWidth="150px"
+                width="100%"
+                labelWidth="100%"
               />
-
+            </InputField>
+            <InputField>
               <FadeTextBox
-                visible={!results.isInit}
                 name="osgoodExponent"
                 inputRef={register(validationRules(10, 30))}
                 disabled={state.isRunning}
                 label="Osgood exponent"
                 error={errors.osgoodExponent}
-                width="150px"
-                labelWidth="200px"
+                width="100%"
+                labelWidth="100%"
               />
+            </InputField>
 
+            <InputField>
               <FadeTextBox
-                visible={!results.isInit}
                 name="totalElongation"
                 inputRef={register(validationRules(0.002, 1))}
                 label="Total elongation"
                 error={errors.totalElongation}
                 disabled={state.isRunning}
-                width="150px"
-                labelWidth="150px"
+                width="100%"
+                labelWidth="100%"
               />
-            </FormContent>
+            </InputField>
+
           </InputBlock>
           <FadeContainer condition={!results.isInit} timeout={1000}>
             <Divider />
           </FadeContainer>
-        </Card>
-        {!results.isInit ? <Results results={results} isRunning={state.isRunning} /> : null}
 
-      </OpacityBlock>
+          {!results.isInit ? <Results results={results} isRunning={state.isRunning} /> : null}
+
+        </OpacityBlock>
+      </AppContainer>
     </Container>
   );
 };
