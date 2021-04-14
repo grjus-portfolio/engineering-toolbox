@@ -56,11 +56,13 @@ const NeuberToolbox = () => {
 
   return (
     <Container noBackColor>
+
       <AppContainer>
         <Spinner isRunning={state.isRunning} />
+
         <OpacityBlock disabled={state.isRunning}>
 
-          <Header>Select unit system</Header>
+          <Header>Unit system</Header>
           <InputField>
             <DropDown
               name="unitSystem"

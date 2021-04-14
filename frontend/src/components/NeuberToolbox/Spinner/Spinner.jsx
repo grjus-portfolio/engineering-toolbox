@@ -4,17 +4,13 @@ import CustomSpinner from '../../ToolboxComponents/Spinner';
 import { Container, Message } from './style';
 
 function Spinner({ isRunning }) {
-  // if (isRunning) {
   return (
     <Container isRunning={isRunning}>
-      <CustomSpinner marginTop="10px" size="20px" />
+      <CustomSpinner marginTop="0.5em" size="1.5rem" />
       <Message>Calculating...</Message>
     </Container>
   );
 }
-//   }
-//   return null;
-// }
 
 export default Spinner;
 
