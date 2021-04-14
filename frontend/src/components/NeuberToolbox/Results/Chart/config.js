@@ -2,13 +2,13 @@ export const chartOptions = {
   type: 'scatter',
   bezierCurve: true,
   options: {
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     responsive: true,
     title: {
       display: false,
       text: 'Stress correction results',
       fontColor: 'black',
-      fontSize: 20,
+      fontSize: 16,
     },
     animation: {
       duration: 500,
@@ -27,13 +27,14 @@ export const chartOptions = {
         scaleLabel: {
           display: true,
           labelString: 'Strain',
-          fontSize: 18,
+          fontSize: 16,
           fontColor: 'black',
         },
         ticks: {
           max: 0.2,
-          fontSize: 18,
+          fontSize: 16,
           fontColor: 'black',
+
         },
 
       }],
@@ -49,19 +50,19 @@ export const chartOptions = {
           min: 0,
           max: 1,
           // stepSize: 10,
-          fontSize: 18,
+          fontSize: 16,
           fontColor: 'black',
         },
       }],
     },
     legend: {
       display: true,
-      position: 'top',
+      position: 'bottom',
       align: 'center',
-      fontSize: 18,
+      fontSize: 16,
       fontColor: 'black',
       labels: {
-        boxWidth: 10,
+        boxWidth: 5,
       },
 
     },
