@@ -19,6 +19,7 @@ export const Header = styled.header`
 background:${theme.topBarColor};
 text-align:center;
 position:fixed;
+overflow-x:visible;
 z-index:999;
 width:100%;
 padding:0.5rem;

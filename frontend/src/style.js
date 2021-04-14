@@ -14,6 +14,7 @@ export const theme = {
 const GlobalStyle = createGlobalStyle`
 *,*::before,*::after {
   box-sizing:border-box;
+  overflow-x:hidden;
 }
 :root{
   font-size:16px;
@@ -32,6 +33,9 @@ const GlobalStyle = createGlobalStyle`
     user-select: none;
     letter-spacing:0.5px;
     color:rgba(0,0,0,0.6);
+    position:relative;
+    overflow-x:hidden;
+    
 
 
   }
