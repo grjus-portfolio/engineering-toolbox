@@ -54,8 +54,3 @@ opacity:0.4;
 pointer-events: none;
 `}
 `;
-
-export const Separator = styled.hr`
-border:1px solid rgba(0,0,0,0.2);
-width:80%;
-`;

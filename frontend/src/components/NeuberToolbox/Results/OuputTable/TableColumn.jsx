@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Divider, Fade } from '@material-ui/core';
+import { Fade } from '@material-ui/core';
 import {
-  TableContainer, Table, TableRow, TableHeader, Title, TableItem,
+  TableContainer, Table, TableRow, TableHeader, Title, TableItem, Separator,
 } from './style';
 
 function TableColumn({ data, label }) {
@@ -10,7 +10,7 @@ function TableColumn({ data, label }) {
     <Fade in={data.Stress !== 'n/a'}>
       <TableContainer>
         <Title>{label}</Title>
-        <Divider />
+        <Separator />
         <Table>
           <tbody>
             <TableRow>
