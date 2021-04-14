@@ -41,15 +41,22 @@ export const Container = styled.div`
   display: block;
   background-color: ${(props) => (props.noBackColor ? theme.mainLayoutColor : 'whitesmoke')};
   position: relative;
-  top: 60px;
+  top: 4em;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
   width: 70%;
+  max-height:max-content;
   transition: height 0.5s ease-in;
   ${({ hidden }) => hidden
     && 'height:300px'}
+
+@media screen and (max-width:${theme.deviceMin}){
+    width:90%;
+    /* margin-bottom:1em; */
+    /* align-items:center; */
+}
 `;
 
 export const Shadow = css`
