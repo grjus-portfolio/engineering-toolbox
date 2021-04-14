@@ -31,7 +31,7 @@ padding:1.5em 0;
 export const FieldContainer = styled.div`
 margin-bottom:1em;
 width:50%;
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
     width:90%;
 }
 `;

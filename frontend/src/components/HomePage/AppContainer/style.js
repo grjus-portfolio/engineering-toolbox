@@ -8,7 +8,7 @@ display:flex;
 width:90%;
 justify-content:space-between;
 align-items:baseline;
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
     flex-direction:column;
     width:100%;
     align-items:center;

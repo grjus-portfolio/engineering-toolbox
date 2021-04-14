@@ -1,19 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FadeContainer } from '../FadeContainer/FadeContainer';
-import LogoComponent from '../LogoIcon';
 import Progress from './ProgressBar';
 import {
-  Container, Title, Logocontainer, DescriptionContainer, Description, Bar,
+  Container, Logo, DescriptionContainer, Description, Bar,
 } from './style';
+
+import LOGO from '../GeneralCardTemplate/img/LOGO.PNG';
 
 const SplashScreen = ({ visible }) => (
   <FadeContainer condition={visible} timeout={1000}>
     <Container>
-      <Logocontainer>
-        <Title>Engineering Toolbox</Title>
-        <LogoComponent icoSize="large" margintop="40px" />
-      </Logocontainer>
+      <Logo src={LOGO} alt="App Logo" />
       <DescriptionContainer>
         <Description>Connecting to server</Description>
         <Bar>

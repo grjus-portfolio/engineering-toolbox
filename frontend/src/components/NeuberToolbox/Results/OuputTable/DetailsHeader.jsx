@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { DetailIcon, IconContainer } from './style';
-import { Header } from '../../style';
+import { DetailIcon, IconContainer, Header } from './style';
 
 export default function DetailsHeader({ expand, onClick, label }) {
   const [rotate, setRotate] = useState('rotate(0deg)');

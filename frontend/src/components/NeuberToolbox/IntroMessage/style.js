@@ -13,7 +13,8 @@ padding:0 1em;
 `;
 
 export const Title = styled.h3`
-color:${theme.primary}
+color:${theme.primary};
+margin:0;
 `;
 
 export const Message = styled.p`

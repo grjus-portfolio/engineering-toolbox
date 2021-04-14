@@ -8,7 +8,7 @@ width:50%;
 background:${theme.topBarColor};
 top:8em;
 ${Shadow}
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
     width:90%;
 }
 
@@ -20,7 +20,7 @@ align-self:center;
 top:1em;
 margin:0 auto;
 width:30%;
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
     width:50%;
 }
 `;

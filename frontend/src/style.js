@@ -8,16 +8,20 @@ export const theme = {
   // topBarColor: 'white',
   primary: '#123C69',
   secondary: '#AC3B61',
-  deviceMin: '1000px',
+  deviceMinLarge: '1000px',
+  deviceMinSmall: '600px',
 };
 
 const GlobalStyle = createGlobalStyle`
 *,*::before,*::after {
   box-sizing:border-box;
+  @media screen and (max-width:${theme.deviceMinLarge}){
+    /* overflow-x:hidden; */
+}
 }
 :root{
   font-size:16px;
-  @media (max-width:${theme.deviceMin}){
+  @media (max-width:${theme.deviceMinLarge}){
       font-size:14px;
     }
 
@@ -32,8 +36,14 @@ const GlobalStyle = createGlobalStyle`
     user-select: none;
     letter-spacing:0.5px;
     color:rgba(0,0,0,0.6);
+<<<<<<< HEAD
     overflow-x:hidden;
     width:100%;
+=======
+    position:relative;
+    overflow-x:hidden;
+    
+>>>>>>> responsive/stress_correction
 
 
   }
@@ -43,7 +53,7 @@ export const Container = styled.div`
   display: block;
   background-color: ${(props) => (props.noBackColor ? theme.mainLayoutColor : 'whitesmoke')};
   position: relative;
-  top: 60px;
+  top: 4em;
   bottom: 0;
   left: 0;
   right: 0;
@@ -52,6 +62,14 @@ export const Container = styled.div`
   transition: height 0.5s ease-in;
   ${({ hidden }) => hidden
     && 'height:300px'}
+  ${({ app }) => app
+    && 'width: 60%;'}
+
+@media screen and (max-width:${theme.deviceMinLarge}){
+    width:90%;
+    /* margin-bottom:1em; */
+    /* align-items:center; */
+}
 `;
 
 export const Shadow = css`

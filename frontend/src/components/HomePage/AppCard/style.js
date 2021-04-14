@@ -12,7 +12,7 @@ padding:1.5em;
 width:30%;
 text-decoration:none;
 ${Shadow}
-@media screen and (max-width:${theme.deviceMin}){
+@media screen and (max-width:${theme.deviceMinLarge}){
     width:100%;
     margin-bottom:1em;
     /* align-items:center; */

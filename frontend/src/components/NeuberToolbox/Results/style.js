@@ -1,16 +1,27 @@
 import styled from 'styled-components';
+import { theme } from '../../../style';
 
 export const StyledContainer = styled.div`
 margin-top:10px;
 overflow:auto;
 display:flex;
-width:100%;
-justify-content:space-around;
+justify-content:space-between;
 position:relative;
-height: ${(props) => (props.height ? props.height : '22rem')};
-transition:height 0.3s ease-in;
+transform-origin:top;
+max-height:auto;
+transform:scaleY(${(props) => (props.height ? props.height : 1)});
+transition:transform 0.3s ease-in;
 overflow:hidden;
 ${({ hidden }) => hidden && `
-height:0px;
+transform:scaleY(0);
+max-height:0;
 `}
+
+${({ hidden }) => hidden && `
+padding 0em;
+max-height:0;
+`}
+@media screen and (max-width:${theme.deviceMinLarge}){
+    flex-direction:column;
+}
 `;

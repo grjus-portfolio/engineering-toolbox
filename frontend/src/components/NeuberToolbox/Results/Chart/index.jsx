@@ -6,6 +6,7 @@ import { chartStyle } from './style';
 import { FadeContainer } from '../../../ToolboxComponents/FadeContainer/FadeContainer';
 import DetailsHeader from '../OuputTable/DetailsHeader';
 import { StyledContainer } from '../style';
+import { useWindowSize } from './customHooks';
 
 export const NeuberChart = ({ results }) => {
   const { XYData, UnitSystem } = results;
@@ -87,15 +88,7 @@ export const NeuberChart = ({ results }) => {
     }
   }, [chart, UnitSystem, results, NeuberHyperbola, RambergOsgood, chartRef, Glinka, Neuber]);
 
-  // useEffect(() => {
-  //   if (expand && bottomRef !== null) {
-  //     window.scrollBy({
-  //       top: -300, // could be negative value
-  //       left: 0,
-  //       behavior: 'smooth',
-  //     });
-  //   }
-  // }, [expand, bottomRef]);
+  useWindowSize(chart);
 
   return (
     <FadeContainer condition={!results.isInit} timeout={1000}>
