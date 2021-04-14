@@ -14,7 +14,9 @@ export const theme = {
 const GlobalStyle = createGlobalStyle`
 *,*::before,*::after {
   box-sizing:border-box;
-  overflow-x:hidden;
+  @media screen and (max-width:${theme.deviceMin}){
+    /* overflow-x:hidden; */
+}
 }
 :root{
   font-size:16px;
@@ -51,7 +53,8 @@ export const Container = styled.div`
   right: 0;
   margin: auto;
   width: 70%;
-  max-height:max-content;
+  /* max-height: fit-content;
+  height: -moz-max-content; */
   transition: height 0.5s ease-in;
   ${({ hidden }) => hidden
     && 'height:300px'}
