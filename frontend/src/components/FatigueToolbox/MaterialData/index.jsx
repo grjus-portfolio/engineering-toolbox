@@ -1,16 +1,15 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import Card from '../../ToolboxComponents/Card';
 import DropDown, { FadeDropDown } from '../../ToolboxComponents/Dropdown';
-import {
-  ButtonContainer, FormContent, Title,
-} from '../../ToolboxComponents/Card/style';
+import { Title, ButtonContainer } from '../styles';
 import {
   unitSystemItems, modFacItems, surfaceFinishItems, loadFactorItems, relFactorItems,
 } from './constants';
 import { FadeTextBox, TextBox } from '../../ToolboxComponents/TextBox';
 import CustomCheckbox from '../../ToolboxComponents/Checkbox';
-import { DropdownContainer } from './styles';
+import {
+  DropdownContainer, InputField, FatigueFactors, CheckboxContainer,
+} from './styles';
 import CustomButton from '../../ToolboxComponents/Button/Button';
 import { FatigueContext, FatigueContextDispatch } from '../context';
 import { ultStrValRules, userFacValRules } from '../validators';
@@ -75,34 +74,36 @@ function MaterialData() {
 
   return (
     <FadeContainer condition timeout={500}>
-      <Card>
-        <ToastHelper toastStatus={hideToast} helperComponent={<Helper />} />
-        <Title>
-          Select stress unit system
-        </Title>
-        <FormContent>
-          <DropDown control={control} name="unitSystem" dropDownItems={unitSystemItems} />
-        </FormContent>
-        <Title>Specify material ultimate strength</Title>
-        <FormContent style={{ marginTop: '20px' }}>
-          <TextBox name="ultimateStrength" inputRef={register(ultStrValRules)} label={`Ultimate strength, ${unitSystemWatch}`} error={errors.ultimateStrength} />
-        </FormContent>
-        <Title>Define material modification factors</Title>
-        <FormContent flex>
-          <FormContent>
-            {modFacItems.map((item) => <CustomCheckbox key={item.value} name={item.value} control={control} label={item.label} />)}
-          </FormContent>
-          <DropdownContainer>
-            <FadeDropDown style={{ padding: '10px' }} timeout={300} visible={isSrufaceFactor} control={control} name="surtfaceFinishFactor" dropDownItems={surfaceFinishItems} />
-            <FadeDropDown style={{ padding: '10px' }} timeout={300} visible={isLoadFactor} control={control} name="loadFactor" dropDownItems={loadFactorItems} />
-            <FadeDropDown style={{ padding: '10px' }} timeout={300} visible={isRelFactor} control={control} name="relFactor" dropDownItems={relFactorItems} />
-            <FadeTextBox unmountOnExit style={{ flexBasis: '100%', paddingLeft: '10px' }} width="165px" timeout={300} visible={ifCustomFactor} name="customFactor" inputRef={register(userFacValRules)} label="User defined factor" error={errors.customFactor} />
-          </DropdownContainer>
-        </FormContent>
-        <ButtonContainer>
-          <CustomButton handleClick={handleSubmit(submitData)} label="Next" buttonType="contained" color="primary" />
-        </ButtonContainer>
-      </Card>
+      <ToastHelper toastStatus={hideToast} helperComponent={<Helper />} />
+      <Title>
+        Select stress unit system
+      </Title>
+      <InputField>
+        <DropDown control={control} name="unitSystem" dropDownItems={unitSystemItems} />
+      </InputField>
+      <Title>Specify material ultimate strength</Title>
+      <InputField style={{ marginTop: '20px' }}>
+        <TextBox width="100%" name="ultimateStrength" inputRef={register(ultStrValRules)} label={`Ultimate strength, ${unitSystemWatch}`} error={errors.ultimateStrength} />
+      </InputField>
+      <Title>Define material modification factors</Title>
+      <FatigueFactors>
+        <CheckboxContainer>
+          {modFacItems.map((item) => <CustomCheckbox key={item.value} name={item.value} control={control} label={item.label} />)}
+        </CheckboxContainer>
+        <DropdownContainer>
+          <FadeDropDown style={{ paddingBottom: '1em' }} timeout={300} visible={isSrufaceFactor} control={control} name="surtfaceFinishFactor" dropDownItems={surfaceFinishItems} />
+          <FadeDropDown style={{ paddingBottom: '1em' }} timeout={300} visible={isLoadFactor} control={control} name="loadFactor" dropDownItems={loadFactorItems} />
+          <FadeDropDown style={{ paddingBottom: '1em' }} timeout={300} visible={isRelFactor} control={control} name="relFactor" dropDownItems={relFactorItems} />
+
+        </DropdownContainer>
+      </FatigueFactors>
+      <InputField>
+        <FadeTextBox unmountOnExit width="100%" timeout={300} variant="standard" visible={ifCustomFactor} name="customFactor" inputRef={register(userFacValRules)} label="User defined factor" error={errors.customFactor} />
+      </InputField>
+
+      <ButtonContainer>
+        <CustomButton handleClick={handleSubmit(submitData)} label="Next" buttonType="contained" color="primary" />
+      </ButtonContainer>
     </FadeContainer>
   );
 }

@@ -61,7 +61,7 @@ export const Container = styled.div`
     && 'width: 60%;'}
 
 @media screen and (max-width:${theme.deviceMinLarge}){
-    width:90%;
+    width:100%;
     /* margin-bottom:1em; */
     /* align-items:center; */
 }

@@ -3,6 +3,7 @@
 // <<findDOMNode is deprecated in StrictMode. findDOMNode was
 // passed an instance of Transition which is inside StrictMode">>
 import { unstable_createMuiStrictModeTheme as createMuiTheme } from '@material-ui/core/';
+import styled from 'styled-components';
 import { theme as globalTheme } from '../../style';
 
 const theme = {
@@ -14,6 +15,15 @@ const theme = {
 
 export const StepperTheme = createMuiTheme({
   overrides: {
+    MuiStepper: {
+      root: {
+        margin: 0,
+        backgroundColor: 'whitesmoke',
+        width: '100%',
+        padding: 0,
+      },
+
+    },
     MuiStepIcon: {
       root: {
         '&$completed': {
@@ -46,3 +56,28 @@ export const StepperTheme = createMuiTheme({
     },
   },
 });
+
+export const AppContainer = styled.div`
+width:70%;
+margin:0 auto;
+position:relative;
+background:whitesmoke;
+top:2em;
+padding:2em;
+@media screen and (max-width:${globalTheme.deviceMinLarge}){
+  width:100%;
+}
+
+`;
+
+export const Title = styled.p`
+
+`;
+
+export const InputField = styled.div`
+width:100%;
+`;
+
+export const ButtonContainer = styled.div`
+display:flex;
+`;

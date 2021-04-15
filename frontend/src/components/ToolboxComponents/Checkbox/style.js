@@ -23,7 +23,7 @@ const StyledLabel = withStyles({
 
 const CheckboxWrapper = styled.div`
 display:block;
-margin-top:-8px;
+width:max-content;
 `;
 
 export {
