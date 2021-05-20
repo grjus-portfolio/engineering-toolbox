@@ -8,7 +8,7 @@ guides the user along all analysis steps.  Basic mechanical engineering knowledg
 [Visit EngineeringToolbox](https://eng-tool.herokuapp.com)
 
 ## API doc
-https://eng-tool.herokuapp.com/docs
+https://eng-tool-mobile.herokuapp.com/docs
 
 
 
